@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    margin: 10px;
+}
+
+header{
+    background-color: yellow;
+    display: flex;  /*ativa as caixas flexiveis*/
+    justify-content: flex-start; /*é o padrão dos elementos colocados no começo do eixo principal */
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    justify-content: space-between;
+    height: 25vh;
+    align-items: center;
+}
+
+h1{
+    border: solid red;
+}
+
+nav{
+    border: solid green;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+
+}
