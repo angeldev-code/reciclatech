@@ -1,75 +1,133 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReciclaTech</title>
+    <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
     <header>
-      <div class="logoTexto">
-        <img src="./asstes/logo.png">
-        <h1>Recicla tech</h1>
-      </div>
-   
-
-      <nav>
-        <a href="#">Como Funciona </a>
-        <a href="#">Doar</a>
-        <a href="#">Adquirir</a>
-        <a href="#">Começar agora</a>
-      </nav>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Símbolo de Reciclagem">
+            <span class="nome-marca">ReciclaTech</span>
+        </div>
+        <nav>
+            <a href="#">Sobre</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+            <button class="btn-verde">Entrar</button>
+        </nav>
     </header>
 
     <main>
-      <section class="primeiraSection">
-        <h2>De uma segunda vida aos seus eletrônicos</h2>
-        <p>Conectamos pessoas que querem doar eletronicos em bom estado com quem precisa deles. Simples, gratuito e sustentáve!</p>
-        <div class="boxBntsPrimeiraSection">
-     
-          <button class="btnVerde"> Quero doar </button>
-          <button class="btnBranco">Quero Adquirir </button>
-        </div>
+        <section class="secao-destaque">
+            <div class="conteudo-destaque">
+                <h2>Dê uma segunda vida aos seus eletrônicos!</h2>
+                <p>Junte-se a nós para reduzir o lixo eletrônico e criar um futuro mais sustentável, um eletrônico de cada vez.</p>
+                <div class="acoes-destaque">
+                    <button class="btn-verde">Reciclar Agora</button>
+                    <a href="#">Saiba Mais &rarr;</a>
+                </div>
+            </div>
+            <div class="imagem-destaque">
+                <img src="assets/logo g.png" alt="Símbolo de reciclagem feito de lixo eletrônico">
+            </div>
+        </section>
 
-       
-      </section>
+        <section class="secao-dados">
+            <div class="item-dado">
+                <h3>3.5K+</h3>
+                <p>Reciclados</p>
+            </div>
+            <div class="item-dado">
+                <h3>1.8K+</h3>
+                <p>Usuários</p>
+            </div>
+            <div class="item-dado">
+                <h3>95%</h3>
+                <p>Satisfação</p>
+            </div>
+        </section>
 
-    
+        <section class="como-funciona">
+            <h2>Como funciona?</h2>
+            <p class="subtitulo">É mais fácil que trocar a pilha do controle!</p>
+            <div class="container-passos">
+                <div class="cartao-passo verde-claro">
+                    <h4>Passo 1: Doação</h4>
+                    <ul>
+                        <li><span class="icone-passo">&#10003;</span> Escolha o eletrônico</li>
+                        <li><span class="icone-passo">&#10003;</span> Agendamento rápido</li>
+                        <li><span class="icone-passo">&#10003;</span> Retirada no local</li>
+                    </ul>
+                </div>
+                <div class="cartao-passo verde-escuro">
+                    <h4>Passo 2: Requisitos</h4>
+                    <ul>
+                        <li><span class="icone-passo">&#10003;</span> Aparelho completo</li>
+                        <li><span class="icone-passo">&#10003;</span> Dados apagados</li>
+                        <li><span class="icone-passo">&#10003;</span> Nota fiscal (opcional)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
+        <section class="secao-produtos">
+            <h2>Produtos disponíveis</h2>
+            <p class="subtitulo">Categorias mais populares</p>
+            <div class="container-produtos">
+                <article class="cartao-produto">
+                    <img src="assets/fone.png" alt="Fone de ouvido">
+                    <p class="nome-produto">Fone de Ouvido</p>
+                    <button class="btn-verde-contorno">Ver Mais</button>
+                </article>
+                <article class="cartao-produto">
+                    <img src="assets/notbook.png" alt="Notebook recondicionado">
+                    <p class="nome-produto">Notebook</p>
+                    <button class="btn-verde-contorno">Ver Mais</button>
+                </article>
+                <article class="cartao-produto">
+                    <img src="assets/smartphone.png" alt="Acessórios e celular">
+                    <p class="nome-produto">Acessórios</p>
+                    <button class="btn-verde-contorno">Ver Mais</button>
+                </article>
+            </div>
+        </section>
 
-      <section class="produtosDisponiveis">
-        <article>
-          <img
-            src="https://www.jbl.com.br/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw54ef0d21/JBL_duetbt_03_black-high-1606x1606px.png?sw=535&sh=535"
-            alt="Fone de Ouvido JBL"
-          />
-          <h3>Fone</h3>
-          <p>Fone em ótimo estado, pronto pra uso</p>
-          <button>Quero adquirir</button>
-        </article>
+        <section class="secao-testemunhos">
+            <h2>O que o pessoal tá falando?</h2>
+            <p class="subtitulo">Melhor que dar o game por concluído</p>
+            <div class="container-testemunhos">
+                <div class="cartao-testemunho">
+                    <p>"Excelente iniciativa, meus antigos aparelhos tiveram um destino digno e ainda ajudei o projeto."</p>
+                    <p class="autor">- Ana R.</p>
+                </div>
+                <div class="cartao-testemunho">
+                    <p>"Serviço rápido e eficiente. Recomendo a todos que têm eletrônicos parados em casa!"</p>
+                    <p class="autor">- Pedro G.</p>
+                </div>
+                <div class="cartao-testemunho">
+                    <p>"Estou usando um celular recondicionado deles. Funciona perfeitamente e economizei muito!"</p>
+                    <p class="autor">- Lucas M.</p>
+                </div>
+            </div>
+        </section>
 
-        <article>
-          <img
-            src="https://http2.mlstatic.com/D_NQ_NP_618141-MLU76378990682_052024-F.jpg"
-            alt="Notebooks"
-          />
-          <h3>Notbooks</h3>
-          <p>Notebooks funcionando direitinho</p>
-          <button>Quero adquirir</button>
-        </article>
-
-        <article>
-          <img
-            src="https://cdn.mos.cms.futurecdn.net/M4nigVN3vvA5EEnNX9atxY-1200-80.jpg"
-            alt="Smartphones"
-          />
-          <h3>Smartphone</h3>
-          <p>Smartphone tops pronto pra uso e bateria 100% </p>
-          <button>Quero Adquirir</button>
-        </article>
-      </section>
+        <section class="secao-cta">
+            <h2>Pronto para fazer a diferença?</h2>
+            <p>Junte-se a nós para reduzir o lixo eletrônico e criar um mundo mais sustentável, um eletrônico de cada vez.</p>
+            <div class="acoes-cta">
+                <button class="btn-verde">Doar Agora</button>
+                <button class="btn-escuro-contorno">Comprar</button>
+            </div>
+        </section>
     </main>
-  </body>
+
+    <footer>
+        <p>&copy; 2024 ReciclaTech. Todos os direitos reservados.</p>
+    </footer>
+</body>
 </html>

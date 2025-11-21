@@ -1,1 +1,474 @@
+// ----------------------------------------------------
+// 1. Variáveis
+// ----------------------------------------------------
+$cor-primaria: #198754; // Verde principal do botão
+$cor-secundaria: #0a4f2d; // Verde mais escuro
+$cor-clara: #f8f9fa; // Cinza claro de fundo
+$cor-escura: #343a40; // Preto para textos
+$cor-texto-sutil: #6c757d; // Cinza sutil
+$fonte-familia: 'Inter', sans-serif;
+$largura-maxima: 1200px;
+$altura-cabecalho: 80px;
 
+// ----------------------------------------------------
+// 2. Mixins
+// ----------------------------------------------------
+@mixin flex-centralizar-espacar-entre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-centralizar-espacar-ao-redor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+// ----------------------------------------------------
+// 3. Estilos Base
+// ----------------------------------------------------
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fonte-familia;
+    color: $cor-escura;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: $cor-escura;
+    transition: color 0.3s;
+    &:hover {
+        color: $cor-primaria;
+    }
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: $cor-texto-sutil;
+    margin-bottom: 2rem;
+}
+
+// ----------------------------------------------------
+// 4. Componentes Reutilizáveis
+// ----------------------------------------------------
+.btn-verde {
+    background-color: $cor-primaria;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: $cor-secundaria;
+    }
+}
+
+.btn-verde-contorno {
+    @extend .btn-verde;
+    background-color: transparent;
+    color: $cor-primaria;
+    border: 2px solid $cor-primaria;
+    &:hover {
+        background-color: $cor-primaria;
+        color: white;
+    }
+}
+
+.btn-escuro-contorno {
+    @extend .btn-verde-contorno;
+    color: $cor-escura;
+    border-color: $cor-escura;
+    &:hover {
+        background-color: $cor-escura;
+        color: white;
+    }
+}
+
+// ----------------------------------------------------
+// 5. Header e Navegação
+// ----------------------------------------------------
+header {
+    @include flex-centralizar-espacar-entre;
+    width: 100%;
+    max-width: $largura-maxima;
+    margin: 0 auto;
+    height: $altura-cabecalho;
+    padding: 0 20px;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .nome-marca {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: $cor-primaria;
+        }
+
+        img {
+            height: 35px; // Tamanho da logo
+            width: auto;
+        }
+    }
+
+    nav {
+        @include flex-centralizar-espacar-entre;
+        gap: 20px;
+
+        .btn-verde {
+            padding: 8px 16px;
+        }
+    }
+}
+
+// ----------------------------------------------------
+// 6. Seções Principais
+// ----------------------------------------------------
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+// 6.1 Seção Destaque
+.secao-destaque {
+    @include flex-centralizar-espacar-entre;
+    max-width: $largura-maxima;
+    margin: 50px auto;
+    padding: 0 20px;
+
+    .conteudo-destaque {
+        flex: 1;
+        max-width: 50%;
+
+        h2 {
+            font-size: 3rem;
+            color: $cor-primaria;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            border: 5px solid $cor-primaria;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .acoes-destaque {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            .btn-verde {
+                padding: 15px 30px;
+            }
+
+            a {
+                font-weight: 700;
+                color: $cor-primaria;
+            }
+        }
+    }
+
+    .imagem-destaque {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+    }
+}
+
+// 6.2 Seção Dados
+.secao-dados {
+    @include flex-centralizar-espacar-ao-redor;
+    background-color: $cor-clara;
+    padding: 40px 20px;
+    margin-bottom: 60px;
+    border-top: 5px solid $cor-primaria;
+    border-bottom: 5px solid $cor-primaria;
+
+    .item-dado {
+        text-align: center;
+
+        h3 {
+            font-size: 2.5rem;
+            color: $cor-primaria;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: $cor-texto-sutil;
+        }
+    }
+}
+
+// 6.3 Como Funciona
+.como-funciona {
+    text-align: center;
+    max-width: $largura-maxima;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+
+    .container-passos {
+        @include flex-centralizar-espacar-ao-redor;
+        gap: 30px;
+
+        .cartao-passo {
+            flex: 1;
+            text-align: left;
+            padding: 30px;
+            border-radius: 10px;
+
+            h4 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                font-weight: 700;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                font-size: 1.1rem;
+            }
+
+            .icone-passo {
+                font-size: 1.2rem;
+                margin-right: 10px;
+                color: white;
+            }
+        }
+
+        .verde-claro {
+            background-color: #e6ffed;
+            border: 2px solid $cor-primaria;
+
+            h4 { color: $cor-primaria; }
+            .icone-passo { background-color: $cor-primaria; border-radius: 50%; padding: 2px 4px; }
+        }
+
+        .verde-escuro {
+            background-color: $cor-primaria;
+            color: white;
+            border: 2px solid $cor-primaria;
+
+            h4 { color: white; }
+            .icone-passo { background-color: white; color: $cor-primaria; border-radius: 50%; padding: 2px 4px; }
+        }
+    }
+}
+
+// 6.4 Seção Produtos Disponíveis
+.secao-produtos {
+    text-align: center;
+    max-width: $largura-maxima;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+
+    .container-produtos {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        .cartao-produto {
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 4px;
+                margin-bottom: 15px;
+                border: 2px solid $cor-primaria;
+            }
+
+            .nome-produto {
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            .btn-verde-contorno {
+                width: 80%;
+                padding: 10px 15px;
+            }
+        }
+    }
+}
+
+// 6.5 Seção Testemunhos
+.secao-testemunhos {
+    text-align: center;
+    max-width: $largura-maxima;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+
+    .container-testemunhos {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .cartao-testemunho {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+            background-color: $cor-clara;
+            border-radius: 8px;
+            border: 2px solid $cor-primaria;
+
+            p {
+                font-style: italic;
+                margin-bottom: 10px;
+            }
+            .autor {
+                font-weight: 700;
+                text-align: right;
+            }
+        }
+    }
+}
+
+// 6.6 Seção CTA Final
+.secao-cta {
+    text-align: center;
+    max-width: $largura-maxima;
+    margin: 0 auto 80px;
+    padding: 50px 20px;
+    background-color: $cor-clara;
+
+    h2 {
+        color: $cor-escura;
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .acoes-cta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+// ----------------------------------------------------
+// 7. Footer (Rodapé)
+// ----------------------------------------------------
+footer {
+    background-color: $cor-escura;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+// ----------------------------------------------------
+// 8. Media Queries (Responsividade)
+// ----------------------------------------------------
+@media (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    header {
+        height: auto;
+        flex-direction: column;
+        padding: 15px 20px;
+        nav {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    }
+
+    .secao-destaque {
+        flex-direction: column;
+        text-align: center;
+        margin: 30px auto;
+
+        .conteudo-destaque {
+            max-width: 100%;
+            margin-bottom: 30px;
+
+            h2 {
+                font-size: 2rem;
+                display: block;
+                border: none;
+            }
+
+            .acoes-destaque {
+                justify-content: center;
+            }
+        }
+
+        .imagem-destaque {
+            justify-content: center;
+            img {
+                max-width: 90%;
+            }
+        }
+    }
+
+    .secao-dados {
+        flex-wrap: wrap;
+        .item-dado {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+    }
+
+    .como-funciona .container-passos,
+    .secao-produtos .container-produtos,
+    .secao-testemunhos .container-testemunhos {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .secao-produtos .cartao-produto img {
+        height: 150px;
+    }
+
+    .secao-cta .acoes-cta {
+        flex-direction: column;
+        align-items: center;
+        .btn-verde, .btn-escuro-contorno {
+            width: 80%;
+        }
+    }
+}
